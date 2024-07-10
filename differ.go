@@ -498,10 +498,10 @@ func (d *Differ) add(path string, v interface{}, doc string, lcs bool) {
 }
 
 func (d *Differ) remove(path string, v interface{}) {
-	if d.opts.invertible {
-		d.patch = d.patch.append(OperationTest, emptyPointer, path, nil, v, 0)
-	}
-	d.patch = d.patch.append(OperationRemove, emptyPointer, path, v, nil, 0)
+	// if d.opts.invertible {
+	// 	d.patch = d.patch.append(OperationTest, emptyPointer, path, nil, v, 0)
+	// }
+	// d.patch = d.patch.append(OperationRemove, emptyPointer, path, v, nil, 0)
 }
 
 func (d *Differ) findUnchanged(v interface{}) string {
