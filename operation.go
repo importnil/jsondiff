@@ -154,9 +154,10 @@ func (p *Patch) String() string {
 	sb := strings.Builder{}
 	for i, op := range *p {
 		if i != 0 {
+            sb.Write([]byte(","))
 			sb.WriteByte('\n')
 		}
 		sb.WriteString(op.String())
 	}
-	return sb.String()
+	return "[" + sb.String() + "]"
 }
